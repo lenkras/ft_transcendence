@@ -1,0 +1,101 @@
+/* client/src/pong/PongGame.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+
+.font-orbitron {
+  font-family: "Orbitron", sans-serif;
+}
+
+.glow {
+  text-shadow: 0 0 5px cyan;
+}
+.score-glow {
+  text-shadow: 0 0 5px white;
+}
+.menu-btn {
+  font-family: "Orbitron", sans-serif;
+}
+
+
+.tournament-container {
+  margin-top: 2rem;
+  position: relative;
+  min-height: 400px; 
+}
+
+
+.round {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 40px;
+}
+
+
+.match {
+  position: relative;
+  margin: 20px 0;
+  width: 200px; /* or w-48 in Tailwind */
+}
+
+
+.player {
+  position: relative;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 162, 255, 0.3);
+  color: white;
+  padding: 12px 20px;
+  margin: 5px 0;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.player:hover {
+  box-shadow: 0 0 10px #00a1ff;
+}
+
+.player.winner {
+  background: rgba(0, 50, 100, 0.6);
+  border-color: #00a1ff;
+  box-shadow: 0 0 10px #00a1ff;
+}
+
+.goal-banner {
+  animation: goal-pop 1s ease-out forwards;
+}
+
+@keyframes goal-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+/* Tron-style scoreboard */
+.scoreboard-wrapper {
+  perspective: 600px;
+}
+
+.score-container {
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid #0ff;
+  box-shadow: 0 0 10px #0ff, inset 0 0 20px #0ff;
+  transform-style: preserve-3d;
+}
+
+.score-left {
+  transform: rotateY(15deg);
+}
+
+.score-right {
+  transform: rotateY(-15deg);
+}
